@@ -1,4 +1,4 @@
-managed-commons-locale-helpers-pt_BR
-====================================
+Commons.Locale.Helpers.pt_BR
+============================
 
-Managed Commons library that translates number to its written form in Brazilian Portuguese
+Managed Commons library that translates a number to its written form in Brazilian Portuguese.
