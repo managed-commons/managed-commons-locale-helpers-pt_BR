@@ -24,46 +24,66 @@
 
 using System;
 using System.Collections;
+using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 
-namespace Commons.Locale.Helpers.pt_BR {
+namespace Commons.Locale.Helpers.pt_BR
+{
 
-	public enum Gênero { Masculino, Femenino }
+	public enum Gênero
+	{
+		Masculino,
+		Feminino
+
+	}
+
+	struct Qualificador
+	{
+		public readonly decimal Fator;
+		public readonly string Singular;
+		public readonly string Plural;
+
+		public Qualificador (decimal fator, string singular, string plural)
+		{
+			Fator = fator;
+			Singular = singular;
+			Plural = plural;
+		}
+	}
 
 	///<summary>
 	/// Formats a number to it's Brazilian Portuguese written form, allowing for unit and gender variations
 	///</summary>
-	public class PorExtenso 
+	public class PorExtenso
 	{
-		private static string[] PequenosNúmeros = new string[]
-			{"zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez",
-			 "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"};
-		private static string[] PequenosNúmerosNoFemenino = new string[]
-			{"zero", "uma", "duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez",
-			 "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"};
-		private static string[] Dezenas = new string[]
-			{"vinte", "trinta", "quarenta", "cinqüenta", "sessenta", "setenta", "oitenta", "noventa"};
-		private static string[] Centenas = new string[]
-			{"cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos",
-			 "setecentos", "oitocentos", "novecentos"};
-		private static string[] CentenasNoFemenino = new string[]
-			{"cento", "duzentas", "trezentas", "quatrocentas", "quinhentas", "seiscentas",
-			 "setecentas", "oitocentas", "novecentas"};
-		
-		private static void ProcessarUmFragmento(int valor, ArrayList partes, bool precisaDoConector, Gênero gênero)
+		static string[] PequenosNúmeros = {"zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez",
+			"onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"
+		};
+		static string[] PequenosNúmerosNoFeminino = {"zero", "uma", "duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez",
+			"onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"
+		};
+		static string[] Dezenas = { "vinte", "trinta", "quarenta", "cinqüenta", "sessenta", "setenta", "oitenta", "noventa" };
+		static string[] Centenas = {"cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos",
+			"setecentos", "oitocentos", "novecentos"
+		};
+		static string[] CentenasNoFeminino = {"cento", "duzentas", "trezentas", "quatrocentas", "quinhentas", "seiscentas",
+			"setecentas", "oitocentas", "novecentas"
+		};
+
+		static void ProcessarUmFragmento (int valor, List<string> partes, bool precisaDoConector, Gênero gênero)
 		{
 			if (valor > 0 && valor < 1000) {
 				if (precisaDoConector && partes.Count > 0)
 					partes.Add("e");
 				if (valor > 100) {
-					if (gênero == Gênero.Femenino)
-						partes.Add(CentenasNoFemenino[(valor / 100)-1]);
+					if (gênero == Gênero.Feminino)
+						partes.Add(CentenasNoFeminino[(valor / 100) - 1]);
 					else
-						partes.Add(Centenas[(valor / 100)-1]);
+						partes.Add(Centenas[(valor / 100) - 1]);
 					precisaDoConector = true;
 				} else {
-					if (valor == 100)
-					{
+					if (valor == 100) {
 						partes.Add("cem");
 						return;
 					}
@@ -71,19 +91,19 @@ namespace Commons.Locale.Helpers.pt_BR {
 				}
 				int valorDasDezenas = valor % 100;
 				if (valorDasDezenas > 0) {
- 					if (precisaDoConector)
+					if (precisaDoConector)
 						partes.Add("e");					
 					if (valorDasDezenas < 20) {
-						if (gênero == Gênero.Femenino)
-							partes.Add(PequenosNúmerosNoFemenino[valorDasDezenas]);
+						if (gênero == Gênero.Feminino)
+							partes.Add(PequenosNúmerosNoFeminino[valorDasDezenas]);
 						else
 							partes.Add(PequenosNúmeros[valorDasDezenas]);
 					} else {
 						partes.Add(Dezenas[(valorDasDezenas / 10) - 2]);
 						if (valorDasDezenas % 10 > 0) {
 							partes.Add("e");					
-							if (gênero == Gênero.Femenino)
-								partes.Add(PequenosNúmerosNoFemenino[valorDasDezenas % 10]);
+							if (gênero == Gênero.Feminino)
+								partes.Add(PequenosNúmerosNoFeminino[valorDasDezenas % 10]);
 							else
 								partes.Add(PequenosNúmeros[valorDasDezenas % 10]);
 						}
@@ -91,66 +111,57 @@ namespace Commons.Locale.Helpers.pt_BR {
 				}
 			}
 		}
-			
-		private struct Qualificador {
-			public readonly decimal fator;
-			public readonly string singular;
-			public readonly string plural;
-			public Qualificador(decimal fator, string singular, string plural)
-			{
-				this.fator = fator;
-				this.singular = singular;
-				this.plural = plural;
-			}
-		}
 
-		private static Qualificador[] Qualificadores = new Qualificador[] {
-				new Qualificador(1000000000000000000000000m, "septilhão", "septilhões"),
-				new Qualificador(1000000000000000000000m, "sextilhão", "sextilhões"),
-				new Qualificador(1000000000000000000m, "quintilhão", "quintilhões"),
-				new Qualificador(1000000000000000m, "quatrilhão", "quatrilhões"),
-				new Qualificador(1000000000000m, "trilhão", "trilhões"),
-				new Qualificador(1000000000m, "bilhão", "bilhões"),
-				new Qualificador(1000000m, "milhão", "milhões")
-			};
+		static Qualificador[] Qualificadores = {
+			new Qualificador(1000000000000000000000000m, "septilhão", "septilhões"),
+			new Qualificador(1000000000000000000000m, "sextilhão", "sextilhões"),
+			new Qualificador(1000000000000000000m, "quintilhão", "quintilhões"),
+			new Qualificador(1000000000000000m, "quatrilhão", "quatrilhões"),
+			new Qualificador(1000000000000m, "trilhão", "trilhões"),
+			new Qualificador(1000000000m, "bilhão", "bilhões"),
+			new Qualificador(1000000m, "milhão", "milhões")
+		};
 
-		private readonly bool useAParteFracionária;
-		private readonly bool nãoEncurtarUmMilParaMil;
-		private readonly Gênero gênero;
-		private readonly string unidadeNoSingular;
-		private readonly string unidadeNoPlural;
-		private readonly string unidadeFracionáriaNoSingular;
-		private readonly string unidadeFracionáriaNoPlural; 
-		private readonly decimal escalaDaParteFracionária;
+		readonly bool useAParteFracionária;
+		readonly bool nãoEncurtarUmMilParaMil;
+		readonly Gênero gênero;
+		readonly string unidadeNoSingular;
+		readonly string unidadeNoPlural;
+		readonly string unidadeFracionáriaNoSingular;
+		readonly string unidadeFracionáriaNoPlural;
+		readonly decimal escalaDaParteFracionária;
+
 		public readonly decimal ValorNumérico;
-		
-		public static string EmReais(decimal valor)
+
+		public static string EmReais (decimal valor)
 		{
 			PorExtenso formatador = new PorExtenso(valor);
 			return formatador.ToString();
 		}
-		
-		public static string EmDólares(decimal valor)
+
+		public static string EmDólares (decimal valor)
 		{
 			PorExtenso formatador = new PorExtenso(valor, "dólar", "dólares", 100m, "centavo de dólar", "centavos de dólar", false, Gênero.Masculino);
 			return formatador.ToString();
 		}
-		
-		public static string CotaçãoDoDólar(decimal valor)
+
+		public static string CotaçãoDoDólar (decimal valor)
 		{
 			PorExtenso formatador = new PorExtenso(valor, "real", "reais", 1000m, "milésimo", "milésimos", false, Gênero.Masculino);
 			return formatador.ToString();
 		}
-		
-		public PorExtenso(decimal valor) : this(valor, "real", "reais", 100m, "centavo", "centavos", false, Gênero.Masculino) {}
-		
-		public PorExtenso(decimal valor, string unidadeNoSingular, string unidadeNoPlural, bool useAParteFracionária, bool nãoEncurtarUmMilParaMil, bool noFemenino) :
-			this(valor, unidadeNoSingular, unidadeNoPlural, 100m, "centavo", "centavos", nãoEncurtarUmMilParaMil, noFemenino?Gênero.Femenino:Gênero.Masculino)
+
+		public PorExtenso (decimal valor) : this(valor, "real", "reais", 100m, "centavo", "centavos", false, Gênero.Masculino)
+		{
+		}
+
+		public PorExtenso (decimal valor, string unidadeNoSingular, string unidadeNoPlural, bool useAParteFracionária = true, bool nãoEncurtarUmMilParaMil = false, bool noFeminino = false) :
+			this(valor, unidadeNoSingular, unidadeNoPlural, 100m, "centavo", "centavos", nãoEncurtarUmMilParaMil, noFeminino ? Gênero.Feminino : Gênero.Masculino)
 		{
 			this.useAParteFracionária = useAParteFracionária;
 		}
-		
-		public PorExtenso(
+
+		public PorExtenso (
 			decimal valor, 
 			string unidadeNoSingular, 
 			string unidadeNoPlural,
@@ -160,7 +171,7 @@ namespace Commons.Locale.Helpers.pt_BR {
 			bool nãoEncurtarUmMilParaMil, 
 			Gênero gênero)
 		{
-			this.ValorNumérico = System.Math.Abs(valor);
+			this.ValorNumérico = Math.Abs(valor);
 			this.unidadeNoSingular = unidadeNoSingular;
 			this.unidadeNoPlural = unidadeNoPlural;
 			this.useAParteFracionária = (escalaDaParteFracionária > 0m);
@@ -170,91 +181,85 @@ namespace Commons.Locale.Helpers.pt_BR {
 			this.unidadeFracionáriaNoSingular = unidadeFracionáriaNoSingular;
 			this.unidadeFracionáriaNoPlural = unidadeFracionáriaNoPlural;
 		}
-		
-		public override string ToString()
+
+		public override string ToString ()
 		{
 			return String.Join(" ", Partes);
 		}
-		
-		public string[] Partes
-		{
+
+		public string[] Partes {
 			get { 
-				ArrayList partes = new ArrayList();
 				if (ValorNumérico == 0m)
-					partes.Add("zero");
-				else {
-					decimal valor = ValorNumérico;
-					int fragmento;
-					foreach(Qualificador qualificador in Qualificadores)
-					{
-						if (valor >= qualificador.fator) {
-							fragmento = (int)(valor / qualificador.fator);
-							ProcessarUmFragmento(fragmento, partes, false, gênero);
-							if (fragmento > 1 || partes.Count > 0)
-								partes.Add(qualificador.plural);
-							else
-								partes.Add(qualificador.singular);
-							valor = valor % qualificador.fator;
-						}						
-					}
-					if (valor >= 1000m) {
-						fragmento = (int)(valor / 1000m);
-						if (fragmento != 1 || partes.Count > 0 || nãoEncurtarUmMilParaMil) {
-							ProcessarUmFragmento(fragmento, partes, false, gênero);
-						}
-						partes.Add("mil");
-						valor = valor % 1000m;
+					return PequenosNúmeros.Take(1).ToArray();
+				var partes = new List<string>();
+				decimal valor = ValorNumérico;
+				int fragmento;
+				foreach (Qualificador qualificador in Qualificadores) {
+					if (valor >= qualificador.Fator) {
+						fragmento = (int)Math.Truncate(valor / qualificador.Fator);
+						ProcessarUmFragmento(fragmento, partes, false, gênero);
+						if (fragmento > 1 || partes.Count > 1)
+							partes.Add(qualificador.Plural);
+						else
+							partes.Add(qualificador.Singular);
+						valor = valor % qualificador.Fator;
 					}						
-					if (valor >= 1m) {
-						fragmento = (int)valor;
-						if (fragmento == 1 && partes.Count == 0) {
-							if (gênero == Gênero.Femenino)
-								partes.Add("uma");
-							else
-								partes.Add("um");
-							partes.Add(unidadeNoSingular);
-						} else {
-							ProcessarUmFragmento(fragmento, partes, true, gênero);
-							partes.Add(unidadeNoPlural);
-						}
+				}
+				if (valor >= 1000m) {
+					fragmento = (int)(valor / 1000m);
+					if (fragmento != 1 || partes.Count > 0 || nãoEncurtarUmMilParaMil) {
+						ProcessarUmFragmento(fragmento, partes, false, gênero);
+					}
+					partes.Add("mil");
+					valor = valor % 1000m;
+				}						
+				if (valor >= 1m) {
+					fragmento = (int)valor;
+					if (fragmento == 1 && partes.Count == 0) {
+						if (gênero == Gênero.Feminino)
+							partes.Add("uma");
+						else
+							partes.Add("um");
+						partes.Add(unidadeNoSingular);
 					} else {
-						if (ValorNumérico >= 1000000m)
-							partes.Add("de");
-						if (ValorNumérico >= 2m)
-							partes.Add(unidadeNoPlural);
-					}						
-					if (this.useAParteFracionária) {
-						fragmento = (int)((valor % 1m) * escalaDaParteFracionária);
-						if (fragmento >= 1) {
-							ProcessarUmFragmento(fragmento, partes, true, gênero);
-							if (fragmento > 1)
-								partes.Add(unidadeFracionáriaNoPlural);
-							else
-								partes.Add(unidadeFracionáriaNoSingular);
-						}
+						ProcessarUmFragmento(fragmento, partes, true, gênero);
+						partes.Add(unidadeNoPlural);
 					}
-				}				
-				return (string[])partes.ToArray(typeof(string));
+				} else {
+					if (ValorNumérico >= 1000000m)
+						partes.Add("de");
+					if (ValorNumérico >= 2m)
+						partes.Add(unidadeNoPlural);
+				}						
+				if (this.useAParteFracionária) {
+					fragmento = (int)((valor % 1m) * escalaDaParteFracionária);
+					if (fragmento >= 1) {
+						ProcessarUmFragmento(fragmento, partes, true, gênero);
+						if (fragmento > 1)
+							partes.Add(unidadeFracionáriaNoPlural);
+						else
+							partes.Add(unidadeFracionáriaNoSingular);
+					}
+				}
+				return partes.ToArray();
 			}
 		}
-		
-		public string[] QuebradoEmLinhas(params int[] tamanhos)
+
+		public string[] QuebradoEmLinhas (params int[] tamanhos)
 		{
-			string[] linhas = new string[tamanhos.Length];
-			string[] partes = Partes;
+			var linhas = new string[tamanhos.Length];
+			var partes = Partes;
 			int parteEmQuestão = 0;
 			int linhaSendoFormada = 0;
-			while (linhaSendoFormada < linhas.Length)
-			{
-				StringBuilder sb = new StringBuilder();
+			while (linhaSendoFormada < linhas.Length) {
+				var sb = new StringBuilder();
 				int size = tamanhos[linhaSendoFormada];
-				while (parteEmQuestão < partes.Length && partes[parteEmQuestão].Length + sb.Length <= size)
-				{
+				while (parteEmQuestão < partes.Length && partes[parteEmQuestão].Length + sb.Length <= size) {
 					sb.Append(partes[parteEmQuestão++]);
 					if (sb.Length < size)
 						sb.Append(' ');
 				}
-				linhas[linhaSendoFormada++] = sb.ToString();
+				linhas[linhaSendoFormada++] = sb.ToString().Trim();
 			}
 			if (parteEmQuestão < partes.Length)
 				throw new ArgumentException("Tamanhos das linhas são insuficientes para acomodar o texto formatado");

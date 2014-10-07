@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Web Developer Express 2010
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.Locale.Helpers.pt_BR", "Commons.Locale.Helpers.pt_BR.csproj", "{693146F3-B068-44B3-AF0E-2D8694D1C102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.Commons.Locale.Helpers.pt_BR", "Unit.Commons.Locale.Helpers.pt_BR\Unit.Commons.Locale.Helpers.pt_BR.csproj", "{910C8BCA-4D33-48AB-BA3F-83624042450A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +15,10 @@ Global
 		{693146F3-B068-44B3-AF0E-2D8694D1C102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{693146F3-B068-44B3-AF0E-2D8694D1C102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{693146F3-B068-44B3-AF0E-2D8694D1C102}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{910C8BCA-4D33-48AB-BA3F-83624042450A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910C8BCA-4D33-48AB-BA3F-83624042450A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910C8BCA-4D33-48AB-BA3F-83624042450A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910C8BCA-4D33-48AB-BA3F-83624042450A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Commons.Locale.Helpers.pt_BR.csproj
@@ -27,11 +30,18 @@ Global
 		$2.inheritsSet = null
 		$2.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $3
+		$3.BeforeMethodCallParentheses = False
+		$3.BeforeIndexerDeclarationBracket = False
+		$3.NewParentheses = False
+		$3.SpacesBeforeBrackets = False
 		$3.inheritsSet = Mono
 		$3.inheritsScope = text/x-csharp
 		$3.scope = text/x-csharp
 		$0.StandardHeader = $4
 		$4.Text = 
-		$4.inheritsSet = MITX11License
+		$4.IncludeInNewFiles = True
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

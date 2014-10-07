@@ -1,4 +1,4 @@
-// Commons.Locale.Helpers.pt_BR Assembly Information
+﻿// Unit.Commons.Locale.Helpers.pt_BR Assembly Information
 //
 // Copyright ©2005-2014 Rafael 'Monoman' Teixeira, Managed Commons Team
 //
@@ -21,19 +21,20 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-
 using System;
 using System.Reflection;
 
-[assembly: AssemblyTitle("Commons Locale Helpers for Brazilian Portuguese")]
-[assembly: AssemblyDescription("Holds a utility class to translate numbers to it's written form in Brazilian Portuguese")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Managed Commons Team")]
-[assembly: AssemblyCopyright("Copyright ©2005-2014 Rafael 'Monoman' Teixeira, Managed Commons Team")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: CLSCompliant(true)]
 
-[assembly: AssemblyVersion("1.1.2014.2")]
-[assembly: AssemblyProduct("Managed.Commons.Locale.Helpers.pt_BR")]
-[assembly: AssemblyInformationalVersion("1.1")]
+[assembly: AssemblyTitle ("Unit.Commons.Locale.Helpers.pt_BR")]
+[assembly: AssemblyDescription ("Unit tests for the utility class that translates numbers to it's written form in Brazilian Portuguese")]
+[assembly: AssemblyConfiguration ("")]
+[assembly: AssemblyCompany ("Managed Commons Team")]
+[assembly: AssemblyCopyright ("Copyright ©2005-2014 Rafael 'Monoman' Teixeira, Managed Commons Team")]
+[assembly: AssemblyTrademark ("")]
+[assembly: AssemblyCulture ("")]
+[assembly: CLSCompliant (true)]
+
+[assembly: AssemblyVersion ("1.0.2014.1")]
+[assembly: AssemblyProduct ("Managed.Commons.Locale.Helpers.pt_BR|")]
+[assembly: AssemblyInformationalVersion ("1.0")]
+
