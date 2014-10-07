@@ -41,5 +41,11 @@
     <Compile Include="Assembly\AssemblyInfo.cs" />
     <Compile Include="Commons.Locale.Helpers.pt_BR\PorExtenso.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Commons.Locale.Helpers.pt_BR-license.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
