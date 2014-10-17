@@ -32,8 +32,10 @@ using System.Reflection;
 [assembly: AssemblyCopyright("Copyright ©2005-2014 Rafael 'Monoman' Teixeira, Managed Commons Team")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
 [assembly: CLSCompliant(true)]
 
-[assembly: AssemblyVersion("1.1.2014.2")]
+[assembly: AssemblyVersion("1.1.10")]
+[assembly: AssemblyFileVersion("1.1.10")]
 [assembly: AssemblyProduct("Managed.Commons.Locale.Helpers.pt_BR")]
-[assembly: AssemblyInformationalVersion("1.1")]
+[assembly: AssemblyInformationalVersion("1.1.10")]
