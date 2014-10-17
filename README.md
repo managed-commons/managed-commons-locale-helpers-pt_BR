@@ -1,8 +1,8 @@
-Commons.Locale.Helpers.pt_BR
+Commons.Locale.Helpers.pt_BR  [![Build status](https://ci.appveyor.com/api/projects/status/8ntvrusmf96kiqo7?svg=true)](https://ci.appveyor.com/project/monoman/managed-commons-locale-helpers-pt-br)
 ============================
 
 Managed Commons library for .NET/Mono, MIT licensed, that has a helper class to convert a numerical value to it's textual representation in the Brazilian Portuguese language.
 
-__Commons.Locale.Helpers.pt_BR 1.0.0 is now available as a Nuget:__ [Commons.Locale.Helpers.pt_BR](https://www.nuget.org/packages/Commons.Locale.Helpers.pt_BR/).
+__Commons.Locale.Helpers.pt_BR 1.1.10 is now available as a Nuget:__ [Commons.Locale.Helpers.pt_BR](https://www.nuget.org/packages/Commons.Locale.Helpers.pt_BR/).
 
-Stable release: 1.0.0.
+Stable release: 1.1.10
