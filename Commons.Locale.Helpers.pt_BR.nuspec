@@ -6,11 +6,11 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>Managed Commons Team</owners>
-    <licenseUrl>https://github.com/monoman/Managed-Commons/blob/master/Commons.GetOptions/license.md</licenseUrl>
-    <projectUrl>https://github.com/monoman/Managed-Commons</projectUrl>
+    <licenseUrl>https://github.com/monoman/managed-commons-locale-helpers-pt_BR/blob/master/Commons.Locale.Helpers.pt_BR-license.md</licenseUrl>
+    <projectUrl>https://github.com/monoman/managed-commons-locale-helpers-pt_BR</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Initial Nuget packaging!</releaseNotes>
+    <releaseNotes>Bug fixes/Unit tests added</releaseNotes>
     <copyright>Copyright (c) 2014 Managed Commons Team</copyright>
     <tags>options parsing</tags>
   </metadata>
