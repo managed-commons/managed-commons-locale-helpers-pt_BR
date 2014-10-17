@@ -12,6 +12,6 @@
     <description>$description$</description>
     <releaseNotes>Bug fixes/Unit tests added</releaseNotes>
     <copyright>Copyright (c) 2014 Managed Commons Team</copyright>
-    <tags>options parsing</tags>
+    <tags>number2voice number2text</tags>
   </metadata>
 </package>
