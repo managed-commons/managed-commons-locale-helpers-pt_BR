@@ -45,12 +45,13 @@
     <None Include="Commons.Locale.Helpers.pt_BR-license.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Commons.Locale.Helpers.pt_BR.nuspec" />
     <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="CleanNugets" BeforeTargets="Build;Rebuild">
     <ItemGroup>
-      <FilesToDelete Include="**\*.nupkg"/>
+      <FilesToDelete Include="**\*.nupkg" />
     </ItemGroup>
     <Delete Files="@(FilesToDelete)" />
   </Target>
