@@ -5,13 +5,13 @@
     <version>$version$</version>
     <title>$title$</title>
     <authors>$author$</authors>
-    <owners>Managed Commons Team</owners>
+    <owners>$author$</owners>
     <licenseUrl>https://github.com/monoman/managed-commons-locale-helpers-pt_BR/blob/master/Commons.Locale.Helpers.pt_BR-license.md</licenseUrl>
     <projectUrl>https://github.com/monoman/managed-commons-locale-helpers-pt_BR</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Bug fixes/Unit tests added</releaseNotes>
-    <copyright>Copyright (c) 2014 Managed Commons Team</copyright>
+    <copyright>Copyright (c) 2005-2015 Rafael 'Monoman' Teixeira, Managed Commons Team</copyright>
     <tags>number2voice number2text</tags>
   </metadata>
 </package>

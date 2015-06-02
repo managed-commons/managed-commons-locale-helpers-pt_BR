@@ -9,10 +9,10 @@
 // distribute, sublicense, and/or sell copies of the Software, and to
 // permit persons to whom the Software is furnished to do so, subject to
 // the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -24,18 +24,18 @@
 
 using System;
 using System.Reflection;
+using Commons;
 
 [assembly: AssemblyTitle("Commons Locale Helpers for Brazilian Portuguese")]
 [assembly: AssemblyDescription("Holds a utility class to translate numbers to it's written form in Brazilian Portuguese")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Managed Commons Team")]
-[assembly: AssemblyCopyright("Copyright ©2005-2014 Rafael 'Monoman' Teixeira, Managed Commons Team")]
+[assembly: AssemblyCopyright("Copyright ©2005-2015 Rafael 'Monoman' Teixeira, Managed Commons Team")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
 [assembly: CLSCompliant(true)]
-
-[assembly: AssemblyVersion("1.1.10")]
-[assembly: AssemblyFileVersion("1.1.10")]
+[assembly: AssemblyVersion("1.1.11")]
+[assembly: AssemblyFileVersion("1.1.11")]
 [assembly: AssemblyProduct("Managed.Commons.Locale.Helpers.pt_BR")]
-[assembly: AssemblyInformationalVersion("1.1.10")]
+[assembly: AssemblyInformationalVersion("1.1.11-Alpha")]
+[assembly: License(LicenseType.MIT)]

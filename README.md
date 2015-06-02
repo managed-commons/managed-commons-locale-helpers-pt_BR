@@ -7,7 +7,6 @@ __Commons.Locale.Helpers.pt_BR 1.1.x is now available as a Nuget:__ [Commons.Loc
 
 Stable release: 1.1.10
 
-
 License: MIT
 ------------
 
