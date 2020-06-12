@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using Commons.Locale.Helpers.pt_BR;
 using NUnit.Framework;
@@ -9,34 +9,24 @@ namespace Unit.Commons.Locale.Helpers.pt_BR
     public class Test
     {
         [Test]
-        public void TesteDeCotaçãoDoDólar()
-        {
-            Assert.AreEqual("dois reais e seiscentos e doze milésimos", PorExtenso.CotaçãoDoDólar(2.612m));
-        }
+        public void TesteDeCotaçãoDoDólar() => Assert.AreEqual("dois reais e seiscentos e doze milésimos", PorExtenso.CotaçãoDoDólar(2.612m));
 
         [Test]
-        public void TesteDeMultiValores()
-        {
-            for (decimal i = 0m; i < 1002m; i += (i < 2m) ? 0.01m : 1m)
-            {
+        public void TesteDeMultiValores() {
+            for (decimal i = 0m; i < 1002m; i += (i < 2m) ? 0.01m : 1m) {
                 var teste = new PorExtenso(i);
                 var testeItens = new PorExtenso(i, "item", "itens", nãoEncurtarUmMilParaMil: true, useAParteFracionária: false);
                 var testeCoisas = new PorExtenso(i, "coisa", "coisas", noFeminino: true, useAParteFracionária: false);
-                if (i == 0m)
-                {
+                if (i == 0m) {
                     Assert.AreEqual("zero", teste.ToString());
                     Assert.AreEqual(teste.ToString(), testeItens.ToString());
                     Assert.AreEqual(teste.ToString(), testeCoisas.ToString());
                     Assert.AreEqual(testeItens.ToString(), testeCoisas.ToString());
-                }
-                else if (i < 1)
-                {
+                } else if (i < 1) {
                     Assert.AreNotEqual(teste.ToString(), testeItens.ToString());
                     Assert.IsEmpty(testeCoisas.ToString());
                     Assert.IsEmpty(testeCoisas.ToString());
-                }
-                else
-                {
+                } else {
                     Assert.AreNotEqual(teste.ToString(), testeItens.ToString());
                     Assert.AreNotEqual(teste.ToString(), testeCoisas.ToString());
                     Assert.AreNotEqual(testeItens.ToString(), testeCoisas.ToString());
@@ -45,8 +35,7 @@ namespace Unit.Commons.Locale.Helpers.pt_BR
         }
 
         [Test]
-        public void TesteDoBilhão()
-        {
+        public void TesteDoBilhão() {
             var valor = decimal.Parse("1234567890.12", CultureInfo.InvariantCulture);
             var teste = new PorExtenso(valor);
             Assert.AreEqual(valor, teste.ValorNumérico);

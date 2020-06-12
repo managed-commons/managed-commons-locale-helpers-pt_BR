@@ -28,7 +28,7 @@ using System.Linq;
 using System.Text;
 using Commons;
 
-[assembly: Commons.Author("Rafael 'Monoman' Teixeira")]
+[assembly: Author("Rafael 'Monoman' Teixeira")]
 [assembly: License(LicenseType.MIT)]
 [assembly: ReportBugsTo("https://github.com/managed-commons/managed-commons-locale-helpers-pt_BR/issues")]
 [assembly: IsPartOfPackage("Managed Commons")]
