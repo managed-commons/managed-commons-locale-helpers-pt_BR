@@ -1,8 +1,0 @@
-2005-04-11 Rafael 'Monoman' Teixeira (rafaelteixeirabr@hotmail.com)
-	PorExtenso.cs: 
-		--	Nova enumeração Gênero { Masculino, Femenino } e ajuste do código para usá-la
-		-- 	Novo construtor que permite definir o tratamento da parte fracionária, determinando
-			a sua escala e nomes da unidade.
-		-- 	Novos métodos de classe facilitadores do uso EmReais(), EmDólares(), CotaçãoDoDólar(). 
-			Ex.: Console.WriteLine(PorExtenso.EmReais(1.23m) + " ~= " + PorExtenso.EmDólares(1.23m / 2.612m));
-	AssemblyInfo.cs: Incrementado o número de versão

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <LOCAL_NUGETS_FOLDER Condition="'$(LOCAL_NUGETS_FOLDER)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)\..\..\nugets'))</LOCAL_NUGETS_FOLDER>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <OutputType>Library</OutputType>
+        <RootNamespace>Commons.Locale.Helpers.pt_BR</RootNamespace>
+        <AssemblyName>Commons.Locale.Helpers.pt_BR</AssemblyName>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <ConsolePause>false</ConsolePause>
+        <Prefer32Bit>false</Prefer32Bit>
+        <Authors>Rafael Teixeira</Authors>
+        <Company>Managed Commons Team</Company>
+        <Product>Managed Commons</Product>
+        <Description>Holds a utility class to translate numbers to it's written form in Brazilian Portuguese</Description>
+        <Copyright>Copyright (c) 2005-2020 Rafael 'Monoman' Teixeira, Managed Commons Team</Copyright>
+        <PackageLicenseUrl></PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/monoman/managed-commons-locale-helpers-pt_BR</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/monoman/managed-commons-locale-helpers-pt_BR.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageReleaseNotes>Upgrade to .NET Standard 2.0</PackageReleaseNotes>
+        <LangVersion>8</LangVersion>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <Version>2.0.0</Version>
+        <PackageTags>number2voice number2text</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../LICENSE">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="../README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Commons.Core" Version="2.0.1" />
+    </ItemGroup>
+    <Target Name="PublishLocally" AfterTargets="Pack">
+        <ItemGroup>
+            <NugetPackages Include="$(PackageOutputAbsolutePath)\*$(Version).nupkg" Condition="Exists('$(LOCAL_NUGETS_FOLDER)')" />
+        </ItemGroup>
+        <Message Importance="high" Text="Publish to Local Nugets Folder '$(LOCAL_NUGETS_FOLDER)'" />
+        <Copy DestinationFolder="$(LOCAL_NUGETS_FOLDER)" SourceFiles="@(NugetPackages)" ContinueOnError="true" SkipUnchangedFiles="false">
+            <Output TaskParameter="CopiedFiles" PropertyName="CopiedNugets" />
+        </Copy>
+        <Message Importance="high" Text="Copied '$(CopiedNugets)'" Condition="Exists('$(CopiedNugets)')" />
+    </Target>
+</Project>

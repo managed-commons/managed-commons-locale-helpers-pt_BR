@@ -48,7 +48,7 @@ namespace Unit.Commons.Locale.Helpers.pt_BR
         public void TesteDoBilhão()
         {
             var valor = decimal.Parse("1234567890.12", CultureInfo.InvariantCulture);
-            PorExtenso teste = new PorExtenso(valor);
+            var teste = new PorExtenso(valor);
             Assert.AreEqual(valor, teste.ValorNumérico);
             Assert.AreEqual("um bilhão duzentos e trinta e quatro milhões quinhentos e sessenta e sete mil e oitocentos e noventa reais e doze centavos", teste.ToString());
             Assert.AreEqual("um bilhão duzentos e trinta e quatro milhões quinhentos e sessenta e sete mil e oitocentos e noventa reais e doze centavos", PorExtenso.EmReais(valor));

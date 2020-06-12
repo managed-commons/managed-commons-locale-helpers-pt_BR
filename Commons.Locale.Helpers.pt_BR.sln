@@ -1,16 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Web
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.Locale.Helpers.pt_BR", "Commons.Locale.Helpers.pt_BR.csproj", "{693146F3-B068-44B3-AF0E-2D8694D1C102}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnit.Commons.Locale.Helpers.pt_BR", "NUnit.Commons.Locale.Helpers.pt_BR\NUnit.Commons.Locale.Helpers.pt_BR.csproj", "{CCAD88C7-2FA9-4571-97F7-20004A432BA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.Commons.Locale.Helpers.pt_BR", "Unit.Commons.Locale.Helpers.pt_BR\Unit.Commons.Locale.Helpers.pt_BR.csproj", "{910C8BCA-4D33-48AB-BA3F-83624042450A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A425E729-9798-4CB1-B95A-A8E5D6CE936A}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Locale.Helpers.pt_BR", "Commons.Locale.Helpers.pt_BR\Commons.Locale.Helpers.pt_BR.csproj", "{3D06519F-9F4E-4CAF-94D4-6FBE6F7EE8B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,37 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{693146F3-B068-44B3-AF0E-2D8694D1C102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{693146F3-B068-44B3-AF0E-2D8694D1C102}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{693146F3-B068-44B3-AF0E-2D8694D1C102}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{693146F3-B068-44B3-AF0E-2D8694D1C102}.Release|Any CPU.Build.0 = Release|Any CPU
-		{910C8BCA-4D33-48AB-BA3F-83624042450A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{910C8BCA-4D33-48AB-BA3F-83624042450A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{910C8BCA-4D33-48AB-BA3F-83624042450A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{910C8BCA-4D33-48AB-BA3F-83624042450A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCAD88C7-2FA9-4571-97F7-20004A432BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCAD88C7-2FA9-4571-97F7-20004A432BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCAD88C7-2FA9-4571-97F7-20004A432BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCAD88C7-2FA9-4571-97F7-20004A432BA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D06519F-9F4E-4CAF-94D4-6FBE6F7EE8B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D06519F-9F4E-4CAF-94D4-6FBE6F7EE8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D06519F-9F4E-4CAF-94D4-6FBE6F7EE8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D06519F-9F4E-4CAF-94D4-6FBE6F7EE8B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Commons.Locale.Helpers.pt_BR.csproj
-		Policies = $0
-		$0.DotNetNamingPolicy = $1
-		$1.DirectoryNamespaceAssociation = Flat
-		$1.ResourceNamePolicy = FileFormatDefault
-		$0.TextStylePolicy = $2
-		$2.inheritsSet = null
-		$2.scope = text/x-csharp
-		$0.CSharpFormattingPolicy = $3
-		$3.BeforeMethodCallParentheses = False
-		$3.BeforeIndexerDeclarationBracket = False
-		$3.NewParentheses = False
-		$3.SpacesBeforeBrackets = False
-		$3.inheritsSet = Mono
-		$3.inheritsScope = text/x-csharp
-		$3.scope = text/x-csharp
-		$0.StandardHeader = $4
-		$4.Text = 
-		$4.IncludeInNewFiles = True
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0D805F2-5425-4793-94D4-43680DD989A9}
 	EndGlobalSection
 EndGlobal
