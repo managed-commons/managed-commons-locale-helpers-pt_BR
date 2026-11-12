@@ -303,3 +303,6 @@ __pycache__/
 OpenCover/
 
 MigrationBackup/
+# bash generated helper files
+outdated.txt
+updated_nugets.txt
