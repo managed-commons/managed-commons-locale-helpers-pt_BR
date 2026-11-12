@@ -1,11 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30204.135
+# Visual Studio Version 18
+VisualStudioVersion = 18.12.12405.243
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnit.Commons.Locale.Helpers.pt_BR", "NUnit.Commons.Locale.Helpers.pt_BR\NUnit.Commons.Locale.Helpers.pt_BR.csproj", "{CCAD88C7-2FA9-4571-97F7-20004A432BA5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Locale.Helpers.pt_BR", "Commons.Locale.Helpers.pt_BR\Commons.Locale.Helpers.pt_BR.csproj", "{3D06519F-9F4E-4CAF-94D4-6FBE6F7EE8B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{8B5EC7F0-0BFB-4BDA-A1EF-12FC00F6B98A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
