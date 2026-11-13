@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Commons.Locale.Helpers.pt_BR\Commons.Locale.Helpers.pt_BR.csproj" />
   </ItemGroup>
 
+    <ItemGroup>
+        <Using Include="System.Globalization" />
+        <Using Include="NUnit.Framework" />
+    </ItemGroup>
 </Project>

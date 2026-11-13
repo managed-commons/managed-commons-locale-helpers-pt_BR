@@ -22,17 +22,6 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Commons;
-
-[assembly: Author("Rafael 'Monoman' Teixeira")]
-[assembly: License(LicenseType.MIT)]
-[assembly: ReportBugsTo("https://github.com/managed-commons/managed-commons-locale-helpers-pt_BR/issues")]
-[assembly: IsPartOfPackage("Managed Commons")]
-
 namespace Commons.Locale.Helpers.pt_BR;
 
 public enum Gênero

@@ -1,7 +1,4 @@
-using System;
-using System.Globalization;
 using Commons.Locale.Helpers.pt_BR;
-using NUnit.Framework;
 
 namespace NUnit.Commons.Locale.Helpers.pt_BR;
 

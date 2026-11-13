@@ -1,21 +1,24 @@
 <Project>
-  <PropertyGroup>
-      <LangVersion>preview</LangVersion>
-      <Version>2.0.1</Version>
-      <Authors>Rafael Teixeira</Authors>
-      <Company>Managed Commons Team</Company>
-      <PackageLicenseFile>LICENSE</PackageLicenseFile>
-      <PackageReadmeFile>README.md</PackageReadmeFile>
-      <Product>Managed Commons</Product>
-      <Description>Holds a utility class to translate numbers to it's written form in Brazilian Portuguese</Description>
-      <Copyright>Copyright (c) 2005-2026 Rafael 'Monoman' Teixeira, Managed Commons Team</Copyright>
-      <Notes>
-          - Update Target Framework for Unit Tests to .NET 11.0
-          - Update syntax for C# preview (currently version 15)
-          - NuGet packages updated:
-          + Microsoft.NET.Test.Sdk  16.4.0 -> 18.12.0
-          + nunit                   3.12.0  -> 5.0.0
-          + NUnit3TestAdapter       3.15.1   -> 6.3.1
-      </Notes>
-  </PropertyGroup>
+    <PropertyGroup>
+        <LangVersion>preview</LangVersion>
+        <Version>2.0.2</Version>
+        <Authors>Rafael Teixeira</Authors>
+        <Company>Managed Commons Team</Company>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Product>Managed Commons</Product>
+        <Description>Holds a utility class to translate numbers to it's written form in Brazilian Portuguese</Description>
+        <Copyright>Copyright (c) 2005-2026 Rafael 'Monoman' Teixeira, Managed Commons Team</Copyright>
+        <Notes>
+            - Eliminated dependency on Commons.Core (version 2.0.1)
+            - Simplified project structure and build process
+        </Notes>
+    </PropertyGroup>
+    <ItemGroup>
+        <Using Include="System" />
+        <Using Include="System.Collections.Generic" />
+        <Using Include="System.Linq" />
+        <Using Include="System.Text" />
+        <Using Include="System.Globalization" />
+    </ItemGroup>
 </Project>

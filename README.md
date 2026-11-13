@@ -5,4 +5,4 @@ Managed Commons library for .NET/Mono, MIT licensed, that has a helper class to 
 
 __Commons.Locale.Helpers.pt_BR 2.0.x is now available as a Nuget:__ [Commons.Locale.Helpers.pt_BR](https://www.nuget.org/packages/Commons.Locale.Helpers.pt_BR/).
 
-Stable release: 2.0.1 - .NET Standard 2.0 compatible
+Stable release: 2.0.2 - .NET Standard 2.0 compatible

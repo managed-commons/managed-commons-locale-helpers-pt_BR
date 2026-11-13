@@ -1,42 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <LOCAL_NUGETS_FOLDER Condition="'$(LOCAL_NUGETS_FOLDER)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)\..\..\nugets'))</LOCAL_NUGETS_FOLDER>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <OutputType>Library</OutputType>
-        <RootNamespace>Commons.Locale.Helpers.pt_BR</RootNamespace>
-        <AssemblyName>Commons.Locale.Helpers.pt_BR</AssemblyName>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug</OutputPath>
-        <DefineConstants>DEBUG</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <ConsolePause>false</ConsolePause>
-        <Prefer32Bit>false</Prefer32Bit>
-        <PackageLicenseUrl></PackageLicenseUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/monoman/managed-commons-locale-helpers-pt_BR</PackageProjectUrl>
         <RepositoryUrl>https://github.com/monoman/managed-commons-locale-helpers-pt_BR.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageReleaseNotes>$(Notes)</PackageReleaseNotes>
         <PackageTags>number2voice number2text</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="../LICENSE">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
-        <None Include="../README.md">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
+        <None Include="../LICENSE" Pack="true" PackagePath="" />
+        <None Include="../README.md" Pack="true" PackagePath="" />
     </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="Commons.Core" Version="2.0.1" />
-    </ItemGroup>
+
 </Project>
